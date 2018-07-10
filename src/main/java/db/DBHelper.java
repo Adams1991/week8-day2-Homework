@@ -1,3 +1,5 @@
+package db;
+
 import db.HibernateUtil;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
