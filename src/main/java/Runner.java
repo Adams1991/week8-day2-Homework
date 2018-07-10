@@ -1,3 +1,4 @@
+import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
@@ -25,14 +26,16 @@ public class Runner {
 
         File foundFile = DBHelper.find(File.class, file1.getId());
 
-        File folders = DBHelper.find(Folder.class, folder.getId());
+        List<Folder> folders = DBHelper.getAll(Folder.class);
 
-        File foundFolder = DBHelper.find(Folder.class, folder.getId());
+        Folder foundFolder = DBHelper.find(Folder.class, folder.getId());
 
 
         file1.setName("bababa");
         DBHelper.update(file1);
 
 
+
+        List<File> foldersInFile = DBFolder.getFiles(folder);
     }
 }
