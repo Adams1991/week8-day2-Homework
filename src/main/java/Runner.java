@@ -25,6 +25,10 @@ public class Runner {
 
         File foundFile = DBHelper.find(File.class, file1.getId());
 
+        File folders = DBHelper.find(Folder.class, folder.getId());
+
+        File foundFolder = DBHelper.find(Folder.class, folder.getId());
+
 
         file1.setName("bababa");
         DBHelper.update(file1);
